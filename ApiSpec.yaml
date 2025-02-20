@@ -42,4 +42,32 @@ paths:
         '404':
           description: City not found
         '500':
-          description: Server error
+          description: Server error 
+
+/forecast:
+    get:
+      summary: Get a three-day weather forecast for London
+      description: Returns the temperature forecast for the next three days.
+      responses:
+        "200":
+          description: Successful response with three-day forecast
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  dayOne:
+                    type: integer
+                    description: Temperature on the first day.
+                    example: 14
+                  dayTwo:
+                    type: integer
+                    description: Temperature on the second day.
+                    example: 23
+                  dayThree:
+                    type: integer
+                    description: Temperature on the third day.
+                    example: 17
+        "500":
+          description: Internal server error  
+
