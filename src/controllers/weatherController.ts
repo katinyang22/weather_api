@@ -63,7 +63,7 @@ export const getWeatherData = async (req: Request, res: Response) => {
  * @param res the response object
  */ 
 
-export const getLondonForecast = async (req: Request, res: Response) => {
+export const getLondonForecast = async (res: Response) => {
   try {
     const forecast = generateLondonForecast();
     res.status(200).json(forecast);
